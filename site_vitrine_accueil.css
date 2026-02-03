@@ -1,0 +1,216 @@
+h1 {
+  color: var(--text);
+  font-family: var(--font-family, 'Times New Roman', Times, serif);
+  font-size: var(--fs-h1, 2.5rem);
+  margin: 0 0 .5rem;
+  line-height: 1.15;
+}
+
+a{
+  font-family: var(--font-family, 'Times New Roman', Times, serif);
+  font-size: 1rem;
+  color: rgb(43, 147, 216);
+}
+
+a:visited{
+  color: rgb(43, 147, 216);
+}
+
+
+nav ul{
+    display: flex;
+}
+
+.menu{
+    display: flex;
+    background-color: rgba(57, 129, 189, 0.856);
+    border-radius: 10px;
+}
+.intro{
+  font-size: var(--fs-lead, 1.125rem);
+}
+
+
+:root{
+  --primary:#3a4c5f;
+  --accent:#627c97d8;
+  --text:#222;
+
+  /* Définissez une bannière sur :root dans votre CSS ou remplacez le chemin */
+  --banner-image: none; /* exemple: url('image/votre-banniere.jpg') */
+  --site-bg-image: none; /* exemple: url('image/fond.jpg') */
+
+  /* Typographie */
+  --font-family: 'Times New Roman', Times, serif;
+  --fs-base: 21px; /* augmenté pour que les paragraphes gagnent environ +5px */
+  --fs-h1: 2.5rem;
+  --fs-h2: 1.75rem;
+  --fs-h3: 1.25rem;
+  --fs-lead: calc(var(--fs-base) + 5px);
+  --line-height: 1.6;
+}
+
+body{
+  font-family: var(--font-family, 'Times New Roman', Times, serif);
+  color :var(--text);
+  margin:0;
+  line-height:var(--line-height,1.6);
+  background-color: rgba(182, 173, 173, 0.932);
+  /* optionnel : image de fond couvrant tout le site */
+  background-image: var(--site-bg-image);
+  background-size: cover;
+  background-position: center;
+  font-size: var(--fs-base,16px);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+  max-width:1100px; /* élargi pour réduire les marges latérales */
+  margin:0 auto;
+  padding:12px; /* réduit l'espace intérieur à gauche/droite */
+  flex: 1;
+}
+
+
+header{
+  background:linear-gradient(90deg,var(--primary),#adb1b4);
+  color:white;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Toujours au-dessus du contenu (pour corriger un problème de superposition)*/
+
+}
+.head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:12px 20px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  font-size:1.05rem;
+}
+.logo-img{ height:38px; width:auto; display:block; border-radius:4px; }
+.logo-text{ display:inline-block; color:inherit; }
+.onglets{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:12px;
+}
+.onglets a{
+  color:white;
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:6px;
+  font-size:0.95rem;
+}
+.onglets a:hover{ background: rgba(255,255,255,0.12); }
+.onglets a.active{ background: rgba(0,0,0,0.18); }
+
+
+footer{
+  background:#111;
+  color:#ddd;
+  text-align:center;
+  padding:18px 12px;
+  margin-top: auto;
+  font-size:0.95rem;
+}
+footer a{ color: #9fd0ff; text-decoration:none; }
+
+
+@media (max-width:600px){
+  .head{ flex-direction:column; align-items:flex-start; gap:8px; }
+  .onglets{ flex-wrap:wrap; gap:8px; }
+}
+
+
+/* Styles supplémentaires pour l'accueil */
+
+.hero{ 
+  padding:40px 0; 
+  background-image: var(--banner-image);
+  background-size: cover;
+  background-position: center;
+  position:relative;
+  z-index: 0;
+  /* léger overlay pour garder les couleurs ternes du thème */
+  background-color: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+}
+
+.hero h1{
+  font-size:var(--fs-h1,2.4rem);
+  margin:0 0 .4rem;
+}
+
+.hero .intro{ 
+  font-size: var(--fs-lead);
+  max-width: none; /* permet au texte de s'étendre davantage */
+  width: 100%;
+}
+
+/* Titres secondaires et hiérarchie */
+h2{ font-size:var(--fs-h2); margin:0 0 .6rem; font-family:var(--font-family); }
+h3{ font-size:var(--fs-h3); margin:0 0 .5rem; font-family:var(--font-family); }
+
+.btn{ 
+  display:inline-block; 
+  background:var(--primary); 
+  color:white; 
+  padding:10px 14px; 
+  border-radius:10px; 
+  text-decoration:none; 
+  margin-right:8px; 
+}
+.btn.ghost{ 
+  background:transparent;
+  border:2px solid rgba(0, 0, 0, 0.18); 
+}
+
+.features h2{
+  margin-top:0; 
+}
+
+.grid{ 
+  display:grid; 
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); 
+  gap:16px; margin-top:12px; 
+}
+
+.card{ background:rgba(175, 20, 20, 0.171);
+  padding:14px; 
+  border-radius:8px; 
+  box-shadow:0 2px 8px rgba(0,0,0,0.08); 
+}
+
+@media (max-width:600px){
+  .hero h1{ 
+    font-size:1.6rem; 
+  }
+  /* ajustement typographique pour petits écrans */
+  h1{ font-size:1.8rem; }
+  h2{ font-size:1.25rem; }
+  h3{ font-size:1.05rem; }
+}
+/* Eviter que les ancres soient masquées par le header sticky */
+section{ 
+  scroll-margin-top:88px; 
+}
+
+/* Styles pour l'affichage de l'organigramme */
+.organigramme figure{ margin:12px 0; }
+.organigramme img{ max-width:100%; height:auto; display:block; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+.organigramme figcaption{ font-size:0.9rem; color:rgba(0,0,0,0.7); margin-top:6px; }
+
+/* Intégration visuelle du bloc organigramme */
+.organigramme{ background: rgba(255,255,255,0.03); padding:18px; border-radius:10px; }
+.organigramme a{ color:var(--primary); }
+
