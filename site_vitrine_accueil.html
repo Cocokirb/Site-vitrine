@@ -17,8 +17,7 @@
                 <nav aria-label="Navigation principale">
                     <ul class="onglets">
                     <li><a href="site_vitrine_accueil.html" class="active">Accueil</a></li>
-                    <li><a href="#catalogue">Catalogue</a></li>
-                    <li><a href="#presentation">Présentation</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
                     <li><a href="histoire.html">Historique</a></li>
                     <li><a href="#organigramme">Organigramme</a></li>
                     <li><a href="Fiches_de_postes/">Fiche de poste</a></li>
@@ -34,17 +33,12 @@
                     <h1>Sonoris — Vente et pret de matériel musical</h1>
                     
                     <p class="intro">Fournisseur de matériel musical neuf et reconditionné. Nous sélectionnons des instruments et équipements de qualité pour studios, écoles et musiciens.
-                    Entreprise récemment créée, nous sommes disponibles pour conseils, démonstrations et livraison.</p>
+                    Entreprise récemment créée, Nous effectuons vos livraison dans </p>
                     <p>
                         <a class="btn" href="histoire.html">Notre histoire</a>
-                        <a class="btn ghost" href="mailto:corentin.bulle@orange.fr">Contactez-nous</a>
+                        <a class="btn ghost" >Contactez-nous</a>
                     </p>
                 </div>
-            </section>
-
-            <section id="presentation" class="container">
-                <h2>Présentation</h2>
-                <p>Sonoris est une jeune entreprise spécialisée dans la vente et le reconditionnement de matériel musical. Notre mission est d'accompagner musiciens et structures avec des produits fiables et des conseils adaptés.</p>
             </section>
 
             <section id="organigramme" class="container">
@@ -54,27 +48,37 @@
                                     <a href="image/Organigramme_final.png" target="_blank" rel="noopener">
                                         <img src="image/Organigramme_final.png" alt="Organigramme Sonoris">
                                     </a>
-                                    <figcaption>Télécharger : <a href="image/Organigramme_final.png" download>Organigramme (PNG)</a></figcaption>
+                                    <figcaption>Télécharger : <a href="image/Organigramme_final.png" download> Organigramme(PNG)</a></figcaption>
                                 </figure>
             </section>
-
+            <!--
+                 - <section> sert à regrouper une portion thématique de la page , 3 cartes puis un lien vers la page complète 'catalogue.html'
+            -->
             <section id="catalogue" class="features container">
-                <h2>Produits en vedette</h2>
+                <div class="features-header">
+                  <h2>Produits en vedette</h2>
+                  <p><a class="btn" href="catalogue.html">Voir tout le catalogue</a></p>
+                </div>
+
                 <div class="grid">
-                    <article class="card">
-                        <h3>Guitares & Basses</h3>
-                        <p>Large choix de guitares acoustiques, électriques et basses pour tous niveaux.</p>
-                    </article>
-                    <article class="card">
+                    <a class="card-link" href="catalogue.html#category-instruments" aria-label="Voir Instruments dans le catalogue"><article class="card" role="article">
+                        <h3>Instruments</h3>
+                        <p>Guitares, basses, claviers — pour débutants et pros.</p>
+                    </article></a>
+                    <a class="card-link" href="catalogue.html#category-claviers" aria-label="Voir Claviers & Pianos dans le catalogue"><article class="card" role="article">
                         <h3>Claviers & Pianos</h3>
-                        <p>Claviers numériques, pianos numériques et accessoires pour le studio.</p>
-                    </article>
-                    <article class="card">
+                        <p>Claviers numériques et pianos portables pour le studio et la scène.</p>
+                    </article></a>
+                    <a class="card-link" href="catalogue.html#category-sonorisation" aria-label="Voir Sonorisation dans le catalogue"><article class="card" role="article">
                         <h3>Sonorisation</h3>
-                        <p>Enceintes, amplis, tables de mixage et micros pour scène et répétition.</p>
-                    </article>
+                        <p>Enceintes, amplis, tables de mixage et micros pour la sonorisation.</p>
+                    </article></a>
                 </div>
             </section>
         </main>
-
+    <footer>
+        <div class="container">
+        <p>Contact : <a href="mailto:corentin.bulle@orange.fr">corentin.bulle@orange.fr</a> — © 2026 Corentin</p>
+        </div>
+    </footer>
 </body>

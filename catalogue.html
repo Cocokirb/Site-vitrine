@@ -1,0 +1,149 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Catalogue — Sonoris</title>
+  <link rel="stylesheet" href="site_vitrine_accueil.css">
+</head>
+
+
+<body>
+
+  <header>
+
+    <div class="head container">
+      <div class="logo">
+        <img class="logo-img" src="image/Logo entreprise Sonoris.jpg" alt="Sonoris">
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul class="onglets">
+          <li><a href="site_vitrine_accueil.html">Accueil</a></li>
+          <li><a href="catalogue.html" class="active">Catalogue</a></li>
+          <li><a href="histoire.html">Historique</a></li>
+          <li><a href="site_vitrine_accueil.html#organigramme">Organigramme</a></li>
+          <li><a href="Fiches_de_postes/">Fiche de poste</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+
+  <main class="container">
+    <section class="catalog-hero">
+      <h1>Catalogue — Tous les produits</h1>
+      <p class="intro">Découvrez notre sélection de matériel neuf et reconditionné. Cliquez sur un produit pour voir plus de détails ou l'ajouter au panier.</p>
+      <p><a class="btn" href="site_vitrine_accueil.html">Retour à l'accueil</a></p>
+    </section>
+
+    <section class="product-list" aria-label="Catalogue produits">
+      <h2>Articles disponibles</h2>
+
+      <nav class="category-nav" role="navigation" aria-label="Filtrer par catégorie">
+        <a class="category-tab active" href="#product-list-all" aria-pressed="true">Tous</a>
+        <a class="category-tab" href="#category-instruments">Instruments</a>
+        <a class="category-tab" href="#category-sonorisation">Sonorisation</a>
+        <a class="category-tab" href="#category-accessoires">Accessoires</a>
+      </nav>
+
+      <p class="filter-status sr-only" aria-live="polite">Affichage de tous les produits</p> 
+
+      <section id="product-list-all" class="category-section">
+        <h3 class="sr-only">Tous les produits</h3>
+        <div class="product-grid" aria-live="polite">
+          <!-- Tous les produits (affichage par défaut) -->
+          <!-- Instruments -->
+          <article id="product-guitare" class="product-card" data-category="instruments" aria-labelledby="guitare-title">
+          <figure class="product-media">
+
+            <img src="image/product-guitare.svg" alt="Guitare électrique Standard — image produit" width="360" height="200">
+
+            </figure>
+            <h3 id="guitare-title">Guitare électrique Standard</h3>
+            <p>Corps en aulne, manche érable, son polyvalent pour scène et studio.</p>
+            <div class="price">€349,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <article id="product-basse" class="product-card" data-category="instruments" aria-labelledby="basse-title">
+          <figure class="product-media">
+
+            <img src="image/product-basse.svg" alt="Basse 4 cordes — image produit" width="360" height="200">
+
+            </figure>
+            <h3 id="basse-title">Basse 4 cordes</h3>
+            <p>Idéale pour répétitions et concerts, électronique active.</p>
+            <div class="price">€289,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <article id="product-clavier" class="product-card" data-category="instruments" aria-labelledby="clavier-title">
+          <figure class="product-media">
+
+            <img src="image/product-clavier.svg" alt="Clavier numérique 61 touches — image produit" width="360" height="200">
+
+            </figure>
+            <h3 id="clavier-title">Clavier numérique 61 touches</h3>
+            <p>Sonorités réalistes, sortie MIDI/USB, léger et portable.</p>
+            <div class="price">€219,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <!-- Sonorisation -->
+          <article id="product-sono" class="product-card" data-category="sonorisation" aria-labelledby="sono-title">
+            <figure class="product-media">
+
+            <img src="image/product-sono.svg" alt="Enceinte active 12\" — image produit" width="360" height="200">
+
+          </figure>
+            <h3 id="sono-title">Enceinte active 12"</h3>
+            <p>Puissance pour petites scènes, DSP intégré.</p>
+            <div class="price">€429,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <article id="product-micro" class="product-card" data-category="sonorisation" aria-labelledby="micro-title">
+            <figure class="product-media">
+
+            <img src="image/product-micro.svg" alt="Micro cardioïde de studio — image produit" width="360" height="200">
+
+          </figure>
+            <h3 id="micro-title">Micro cardioïde de studio</h3>
+            <p>Conçu pour voix et instruments, livré avec suspension.</p>
+            <div class="price">€129,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <!-- Accessoires -->
+          <article id="product-casque" class="product-card" data-category="accessoires" aria-labelledby="casque-title">
+          <figure class="product-media">
+
+            <img src="image/product-casque.svg" alt="Casque studio fermé — image produit" width="360" height="200">
+
+          </figure>
+            <h3 id="casque-title">Casque studio fermé</h3>
+            <p>Confort longue durée, réponse neutre pour mix.</p>
+            <div class="price">€79,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <script src="java/catalogue.js"></script>
+
+
+  <footer>
+        <div class="container">
+        <p>Contact : <a href="mailto:corentin.bulle@orange.fr">corentin.bulle@orange.fr</a> — © 2026 Corentin</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

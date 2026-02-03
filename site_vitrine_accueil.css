@@ -13,7 +13,7 @@ a{
 }
 
 a:visited{
-  color: rgb(43, 147, 216);
+  color: rgb(0, 0, 0);
 }
 
 
@@ -30,19 +30,19 @@ nav ul{
   font-size: var(--fs-lead, 1.125rem);
 }
 
-
 :root{
-  --primary:#3a4c5f;
-  --accent:#627c97d8;
-  --text:#222;
+  /* Variables CSS (faciles à modifier) */
+  --primary:#3a4c5f;   /* couleur principale */
+  --accent:#627c97d8;  /* couleur secondaire */
+  --text:#222;         /* couleur du texte */
 
-  /* Définissez une bannière sur :root dans votre CSS ou remplacez le chemin */
-  --banner-image: none; /* exemple: url('image/votre-banniere.jpg') */
-  --site-bg-image: none; /* exemple: url('image/fond.jpg') */
+  /* Images de décor*/
+  --banner-image: none; 
+  --site-bg-image: none; 
 
-  /* Typographie */
+  /* Taille de police de base pour tout le site */
   --font-family: 'Times New Roman', Times, serif;
-  --fs-base: 21px; /* augmenté pour que les paragraphes gagnent environ +5px */
+  --fs-base: 21px;
   --fs-h1: 2.5rem;
   --fs-h2: 1.75rem;
   --fs-h3: 1.25rem;
@@ -50,14 +50,16 @@ nav ul{
   --line-height: 1.6;
 }
 
+
 body{
   font-family: var(--font-family, 'Times New Roman', Times, serif);
   color :var(--text);
   margin:0;
   line-height:var(--line-height,1.6);
   background-color: rgba(182, 173, 173, 0.932);
-  /* optionnel : image de fond couvrant tout le site */
-  background-image: var(--site-bg-image);
+
+  background-image: var(--site-bg-image);/* a ajouter */
+
   background-size: cover;
   background-position: center;
   font-size: var(--fs-base,16px);
@@ -82,6 +84,7 @@ header{
   z-index: 1000; /* Toujours au-dessus du contenu (pour corriger un problème de superposition)*/
 
 }
+
 .head{
   display:flex;
   align-items:center;
@@ -89,6 +92,7 @@ header{
   gap:1rem;
   padding:12px 20px;
 }
+
 .logo{
   display:flex;
   align-items:center;
@@ -96,8 +100,19 @@ header{
   font-weight:700;
   font-size:1.05rem;
 }
-.logo-img{ height:38px; width:auto; display:block; border-radius:4px; }
-.logo-text{ display:inline-block; color:inherit; }
+
+.logo-img{ 
+  height:38px; 
+  width:auto; 
+  display:block; 
+  border-radius:4px; 
+}
+
+.logo-text{ 
+  display:inline-block; 
+  color:inherit; 
+}
+
 .onglets{
   list-style:none;
   margin:0;
@@ -135,82 +150,315 @@ footer a{ color: #9fd0ff; text-decoration:none; }
 
 /* Styles supplémentaires pour l'accueil */
 
-.hero{ 
-  padding:40px 0; 
+.hero {
+  padding: 40px 0;
   background-image: var(--banner-image);
   background-size: cover;
   background-position: center;
-  position:relative;
+  position: relative;
   z-index: 0;
   /* léger overlay pour garder les couleurs ternes du thème */
   background-color: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
 }
 
-.hero h1{
-  font-size:var(--fs-h1,2.4rem);
-  margin:0 0 .4rem;
+.hero h1 {
+  font-size: var(--fs-h1, 2.4rem);
+  margin: 0 0 .4rem;
 }
 
-.hero .intro{ 
+.hero .intro {
   font-size: var(--fs-lead);
   max-width: none; /* permet au texte de s'étendre davantage */
   width: 100%;
 }
 
 /* Titres secondaires et hiérarchie */
-h2{ font-size:var(--fs-h2); margin:0 0 .6rem; font-family:var(--font-family); }
-h3{ font-size:var(--fs-h3); margin:0 0 .5rem; font-family:var(--font-family); }
 
-.btn{ 
-  display:inline-block; 
-  background:var(--primary); 
-  color:white; 
-  padding:10px 14px; 
-  border-radius:10px; 
-  text-decoration:none; 
-  margin-right:8px; 
-}
-.btn.ghost{ 
-  background:transparent;
-  border:2px solid rgba(0, 0, 0, 0.18); 
+h2 {
+  font-size: var(--fs-h2);
+  margin: 0 0 .6rem;
+  font-family: var(--font-family);
 }
 
-.features h2{
-  margin-top:0; 
+h3 {
+  font-size: var(--fs-h3);
+  margin: 0 0 .5rem;
+  font-family: var(--font-family);
 }
 
-.grid{ 
-  display:grid; 
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); 
-  gap:16px; margin-top:12px; 
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-right: 8px;
+  font-size: 25px;
 }
 
-.card{ background:rgba(175, 20, 20, 0.171);
-  padding:14px; 
-  border-radius:8px; 
-  box-shadow:0 2px 8px rgba(0,0,0,0.08); 
+.btn.ghost {
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.18);
 }
 
-@media (max-width:600px){
-  .hero h1{ 
-    font-size:1.6rem; 
+.features h2 {
+  margin-top: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.card {
+  background: rgba(175, 20, 20, 0.171);
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.6rem;
   }
+
   /* ajustement typographique pour petits écrans */
-  h1{ font-size:1.8rem; }
-  h2{ font-size:1.25rem; }
-  h3{ font-size:1.05rem; }
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+  }
 }
 /* Eviter que les ancres soient masquées par le header sticky */
-section{ 
-  scroll-margin-top:88px; 
+
+section {
+  scroll-margin-top: 88px;
 }
 
 /* Styles pour l'affichage de l'organigramme */
-.organigramme figure{ margin:12px 0; }
-.organigramme img{ max-width:100%; height:auto; display:block; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
-.organigramme figcaption{ font-size:0.9rem; color:rgba(0,0,0,0.7); margin-top:6px; }
+
+.organigramme figure {
+  margin: 12px 0;
+}
+
+.organigramme img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.organigramme figcaption {
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.7);
+  margin-top: 6px;
+}
 
 /* Intégration visuelle du bloc organigramme */
-.organigramme{ background: rgba(255,255,255,0.03); padding:18px; border-radius:10px; }
-.organigramme a{ color:var(--primary); }
+
+.organigramme {
+  background: rgba(255,255,255,0.03);
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.organigramme a {
+  color: var(--primary);
+}
+
+/* ===== Catalogue / fiches produit ===== */
+
+.card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link:focus {
+  outline: 3px solid rgba(98,124,151,0.25);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+  /* hauteur de ligne fixe pour garder des cellules uniformes */
+  grid-auto-rows: 320px;
+}
+
+.product-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  min-height: 260px;
+  box-sizing: border-box;
+}
+
+/* si vous préférez qu'une seule carte visible soit centrée, utilisez cette classe (optionnel)
+   .product-card.single-visible { justify-content: center; align-items: flex-start; } */
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-auto-rows: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-auto-rows: 240px;
+  }
+
+  .product-card {
+    min-height: 220px;
+  }
+}
+
+.product-media {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+}
+
+.product-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.product-card p {
+  margin: .35rem 0 .6rem;
+  color: rgba(0,0,0,0.7);
+  flex: 1;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+.product-actions {
+  margin-top: 6px;
+}
+
+.product-actions .btn {
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.product-list h2 {
+  margin-top: 0;
+}
+
+/* Navigation par catégorie */
+
+.category-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.category-tab {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.7);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.category-tab:focus,
+.category-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  outline: none;
+}
+
+.category-tab.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(58,76,95,0.18);
+  transform: none;
+}
+
+.category-section {
+  padding: 10px 0 20px;
+}
+
+.category-section:target {
+  background: linear-gradient(90deg, rgba(98,124,151,0.03), transparent);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.filter-status {
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.6);
+  margin: 6px 0 0;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* cacher les produits filtrés (utilisé par JS) */
+
+.product-card.hidden {
+  display: none !important;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Assurer que les ancres produits ne soient pas masquées par le header sticky */
+
+.product-card[id] {
+  scroll-margin-top: 96px;
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    min-height: 220px;
+  }
+
+  .category-tab {
+    padding: 7px 10px;
+    font-size: 0.95rem;
+  }
+}
+
 
