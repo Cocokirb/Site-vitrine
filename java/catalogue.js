@@ -1,8 +1,3 @@
-/* catalogue.js — filtrage (niveau étudiant BTS SIO SLAM)
-   - Remarque : placez ce fichier dans le même dossier que `catalogue.html`
-   - Comportement : clique sur onglet → n'affiche que les produits de la catégorie
-   - Prend en charge le hash (ex: #product-guitare ou #category-instruments)
-*/
 
 document.addEventListener('DOMContentLoaded', function () {
   const tabs = Array.from(document.querySelectorAll('.category-tab'));
@@ -64,10 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // attacher les écouteurs
+
   tabs.forEach(t => t.addEventListener('click', handleClick));
 
-  // gestion du hash au chargement (ex: ouverture directe sur #product-guitare)
+
   function applyHash(h) {
     if (!h) { setActive(document.querySelector('.category-tab[href$="#product-list-all"]')); showCategory('all'); return; }
     if (h.startsWith('#product-')) {
@@ -103,6 +98,4 @@ document.addEventListener('DOMContentLoaded', function () {
   // support back/forward
   window.addEventListener('hashchange', function () { applyHash(location.hash || ''); });
 
-  // expose pour debug dans la console (optionnel pour les élèves)
-  window.__sonorisFilter = { showCategory, tabsCount: tabs.length, cardsCount: cards.length };
 });

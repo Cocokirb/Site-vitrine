@@ -1,0 +1,201 @@
+    
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Panier — Sonoris</title>
+  <link rel="stylesheet" href="site_vitrine_accueil.css">
+</head>
+<body>
+  <header>
+    <div class="head container">
+      <div class="logo">
+        <img class="logo-img" src="image/Logo entreprise Sonoris.jpg" alt="Sonoris">
+        <span class="logo-text">Sonoris</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul class="onglets">
+          <li><a href="site_vitrine_accueil.html">Accueil</a></li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="histoire.html">Historique</a></li>
+          <li><a href="Fiches_de_postes/">Fiche de poste</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="panier-title">
+      <h1 id="panier-title">Panier</h1>
+      
+      <div id="cart-empty" style="text-align: center; padding: 40px 0;">
+        <p style="font-size: 1.1rem; color: rgba(0,0,0,0.6);">Votre panier est vide</p>
+        <p><a class="btn" href="catalogue.html">Continuer vos achats</a></p>
+      </div>
+
+      <div id="cart-content" style="display: none;">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Article</th>
+              <th>Prix</th>
+              <th>Quantité</th>
+              <th>Sous-total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <!-- Les articles du panier s'affichent ici -->
+          </tbody>
+        </table>
+
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Sous-total :</span>
+            <span id="subtotal">0,00€</span>
+          </div>
+          <div class="summary-row">
+            <span>Frais de port :</span>
+            <span>10€</span>
+          </div>
+          <div class="summary-row total">
+            <span><strong>Total :</strong></span>
+            <span id="total"><strong>0,00€</strong></span>
+          </div>
+        </div>
+
+        <div class="cart-actions">
+          <a class="btn ghost" href="catalogue.html">Continuer vos achats</a>
+          <button class="btn" id="checkout-btn">Procéder au paiement</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p><a href="mailto:sonoris.musique@gmail.com">sonoris.musique@gmail.com</a></p>
+          <p><small>© 2026 Corentin — Sonoris</small></p>
+        </div>
+        <div class="footer-column">
+          <h4>Nos réseaux</h4>
+          <ul>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://www.twitter.com/">X (Twitter)</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Produits disponibles
+    const products = {
+      'product-guitare': { name: 'Guitare électrique Standard', price: 349.00 },
+      'product-basse': { name: 'Basse 4 cordes', price: 289.00 },
+      'product-clavier': { name: 'Clavier numérique 61 touches', price: 219.00 },
+      'product-sono': { name: 'Enceinte active 12"', price: 429.00 },
+      'product-micro': { name: 'Micro cardioïde de studio', price: 129.00 },
+      'product-casque': { name: 'Casque studio fermé', price: 79.00 }
+    };
+
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || {};
+      return cart;
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const cart = loadCart();
+      const cartItems = document.getElementById('cart-items');
+      const cartContent = document.getElementById('cart-content');
+      const cartEmpty = document.getElementById('cart-empty');
+
+      cartItems.innerHTML = '';
+
+      if (Object.keys(cart).length === 0) {
+        cartContent.style.display = 'none';
+        cartEmpty.style.display = 'block';
+        return;
+      }
+
+      cartContent.style.display = 'block';
+      cartEmpty.style.display = 'none';
+
+      let total = 0;
+
+      for (const [productId, quantity] of Object.entries(cart)) {
+        const product = products[productId];
+        if (!product) continue;
+
+        const subtotal = product.price * quantity;
+        total += subtotal;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${product.name}</td>
+          <td>€${product.price.toFixed(2)}</td>
+          <td>
+            <div class="qty-control">
+              <button class="qty-btn" onclick="updateQty('${productId}', ${quantity - 1})">−</button>
+              <input type="number" value="${quantity}" min="1" onchange="updateQty('${productId}', this.value)">
+              <button class="qty-btn" onclick="updateQty('${productId}', ${quantity + 1})">+</button>
+            </div>
+          </td>
+          <td>€${subtotal.toFixed(2)}</td>
+          <td><button class="btn-remove" onclick="removeFromCart('${productId}')">Supprimer</button></td>
+        `;
+        cartItems.appendChild(row);
+      }
+
+      document.getElementById('subtotal').textContent = '€' + total.toFixed(2);
+      document.getElementById('total').textContent = '€' + total.toFixed(2);
+    }
+
+    function updateQty(productId, qty) {
+      const cart = loadCart();
+      const quantity = parseInt(qty);
+
+      if (quantity <= 0) {
+        removeFromCart(productId);
+        return;
+      }
+
+      cart[productId] = quantity;
+      saveCart(cart);
+      renderCart();
+    }
+
+    function removeFromCart(productId) {
+      const cart = loadCart();
+      delete cart[productId];
+      saveCart(cart);
+      renderCart();
+    }
+
+    function clearCart() {
+      localStorage.setItem('cart', JSON.stringify({}));
+      renderCart();
+    }
+
+    // Bouton paiement
+    document.getElementById('checkout-btn')?.addEventListener('click', function() {
+      alert('Merci d\'avoir commandé ! Paiement en cours...\n\nCette fonctionnalité est une démonstration.');
+      clearCart();
+      renderCart();
+    });
+
+    // Afficher le panier au chargement
+    renderCart();
+  </script>
+</body>
+</html>

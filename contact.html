@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Sonoris</title>
+  <link rel="stylesheet" href="site_vitrine_accueil.css">
+</head>
+<body>
+  <header>
+    <div class="head container">
+      <div class="logo">
+        <img class="logo-img" src="image/Logo entreprise Sonoris.jpg" alt="Sonoris">
+        <span class="logo-text">Sonoris</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul class="onglets">
+          <li><a href="site_vitrine_accueil.html">Accueil</a></li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="histoire.html">Historique</a></li>
+          <li><a href="Fiches_de_postes/">Fiche de poste</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="contact-title">
+      <h1 id="contact-title">Contact — Envoyer un mail</h1> <br>
+
+      <form class="contact-form" id="contactForm" >
+        <label for="to">Destinataire</label>
+        <input id="to" type="email" value="sonoris.musique@gmail.com" readonly>
+
+        <label for="subject">Objet</label>
+        <input id="subject" type="text" placeholder="Objet du message" required>
+
+        <label for="body">Message</label>
+        <textarea id="body" placeholder="Votre message..." required></textarea>
+
+        <button class="btn" type="submit">Envoyer</button>
+        <a class="btn ghost" href="site_vitrine_accueil.html">Annuler</a>
+      </form>
+
+      <div id="preview" class="mail-preview" style="display:none; margin-top:24px;">
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p><a href="mailto:sonoris.musique@gmail.com">sonoris.musique@gmail.com</a></p>
+          <p><small>© 2026 Corentin — Sonoris</small></p>
+        </div>
+        <div class="footer-column">
+          <h4>Nos réseaux</h4>
+          <ul>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://www.twitter.com/">X (Twitter)</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

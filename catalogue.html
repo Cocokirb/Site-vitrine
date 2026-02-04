@@ -19,12 +19,11 @@
       </div>
       <nav aria-label="Navigation principale">
         <ul class="onglets">
-          <li><a href="site_vitrine_accueil.html">Accueil</a></li>
-          <li><a href="catalogue.html" class="active">Catalogue</a></li>
-          <li><a href="histoire.html">Historique</a></li>
-          <li><a href="site_vitrine_accueil.html#organigramme">Organigramme</a></li>
-          <li><a href="Fiches_de_postes/">Fiche de poste</a></li>
-        </ul>
+            <li><a href="site_vitrine_accueil.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="histoire.html">Historique</a></li>
+            <li><a href="Fiches_de_postes/">Fiche de poste</a></li>
+          </ul>
       </nav>
     </div>
 
@@ -34,10 +33,10 @@
     <section class="catalog-hero">
       <h1>Catalogue — Tous les produits</h1>
       <p class="intro">Découvrez notre sélection de matériel neuf et reconditionné. Cliquez sur un produit pour voir plus de détails ou l'ajouter au panier.</p>
-      <p><a class="btn" href="site_vitrine_accueil.html">Retour à l'accueil</a></p>
     </section>
 
     <section class="product-list" aria-label="Catalogue produits">
+      <p style="margin-bottom: 16px;"><a class="btn" href="panier.html">Voir le panier 🛒</a></p>
       <h2>Articles disponibles</h2>
 
       <nav class="category-nav" role="navigation" aria-label="Filtrer par catégorie">
@@ -134,16 +133,53 @@
 
   </main>
 
+  <div class="container" style="margin-bottom: 24px;">
+    <p><a class="btn" href="site_vitrine_accueil.html">Retour à l'accueil</a></p>
+  </div>
 
-  <script src="java/catalogue.js"></script>
-
-
-  <footer>
+    <footer>
         <div class="container">
-        <p>Contact : <a href="mailto:corentin.bulle@orange.fr">corentin.bulle@orange.fr</a> — © 2026 Corentin</p>
+          <div class="footer-grid">
+            <div class="footer-column">
+              <h4>Contact</h4>
+              <p><a href="mailto:sonoris.musique@gmail.com">sonoris.musique@gmail.com</a></p>
+              <p><small>© 2026 Corentin — Sonoris</small></p>
+            </div>
+            <div class="footer-column">
+              <h4>Nos réseaux</h4>
+              <ul>
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li><a href="https://www.twitter.com/">X (Twitter)</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
     </footer>
 
+    <script src="java/catalogue.js"></script>
+    <script>
+      // Ajouter au panier
+      function addToCart(productId, productName, productPrice) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || {};
+        cart[productId] = (cart[productId] || 0) + 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(productName + ' ajouté au panier !');
+      }
 
+      // Remplacer tous les boutons Acheter
+      document.querySelectorAll('.product-actions .btn').forEach(btn => {
+        const card = btn.closest('.product-card');
+        const productId = card.id;
+        const productName = card.querySelector('h3').textContent;
+        const productPrice = parseFloat(card.querySelector('.price').textContent.replace('€', ''));
+        
+        btn.textContent = 'Ajouter au panier';
+        btn.onclick = (e) => {
+          e.preventDefault();
+          addToCart(productId, productName, productPrice);
+        };
+      });
+    </script>
 </body>
 </html>
