@@ -36,7 +36,7 @@ nav ul{
 :root{
   /* Variables CSS */
   --primary:#3a4c5f;   /* couleur principale */
-  --accent:#627c97d8;  /* couleur secondaire */
+  --accent:#46525ed8;  /* couleur secondaire */
   --text:#222;         /* couleur du texte */
 
   /* Images de décor*/
@@ -59,7 +59,7 @@ body{
   color :var(--text);
   margin:0;
   line-height:var(--line-height,1.6);
-  background-color: rgba(182, 173, 173, 0.932);
+  background-color: rgba(129, 122, 122, 0.932);
 
   background-image: var(--site-bg-image);/* a ajouter */
 
@@ -730,7 +730,7 @@ section {
 /* ===== Styles Historique (Timeline) ===== */
 
 .timeline-section {
-  background: rgba(255,255,255,0.95);
+  background: rgba(170, 155, 155, 0.95);
   padding: 20px;
   margin: 16px 0;
   border-radius: 10px;
