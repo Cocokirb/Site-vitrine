@@ -1,10 +1,10 @@
-
+// on choisit les éléments a manipuler 
 document.addEventListener('DOMContentLoaded', function () {
   const tabs = Array.from(document.querySelectorAll('.category-tab'));
   const cards = Array.from(document.querySelectorAll('.product-card'));
   const status = document.querySelector('.filter-status');
 
-  // sécurité : si éléments manquent, on log pour debug et on quitte proprement
+  // sécurité : si aucun élement  on debugue et on quitte
   if (!tabs.length || !cards.length) {
     console.warn('[catalogue.js] tabs ou cards manquants — vérifiez le HTML');
     return;
