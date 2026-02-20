@@ -1,3 +1,23 @@
+:root{
+  /* Variables CSS */
+  --primary:#3a4c5f;   /* couleur principale */
+  --accent:#46525ed8;  /* couleur secondaire */
+  --text:#222;         /* couleur du texte */
+
+  /* Images de décor*/
+  --banner-image: url('image/Banniere.png'); 
+  --site-bg-image: none; 
+
+  /* Taille de police de base pour tout le site */
+  --font-family: 'Times New Roman', Times, serif;
+  --fs-base: 21px;
+  --fs-h1: 2.5rem;
+  --fs-h2: 1.75rem;
+  --fs-h3: 1.25rem;
+  --fs-lead: calc(var(--fs-base) + 5px);
+  --line-height: 1.6;
+}
+
 h1 {
   color: var(--text);
   font-family: var(--font-family, 'Times New Roman', Times, serif);
@@ -16,10 +36,6 @@ a:visited{
   color: rgb(0, 0, 0);
 }
 
-.intro-histoire{
-
-}
-
 nav ul{
     display: flex;
 }
@@ -33,25 +49,6 @@ nav ul{
   font-size: var(--fs-lead, 1.125rem);
 }
 
-:root{
-  /* Variables CSS */
-  --primary:#3a4c5f;   /* couleur principale */
-  --accent:#46525ed8;  /* couleur secondaire */
-  --text:#222;         /* couleur du texte */
-
-  /* Images de décor*/
-  --banner-image: url('images/banner.jpg'); 
-  --site-bg-image: none; 
-
-  /* Taille de police de base pour tout le site */
-  --font-family: 'Times New Roman', Times, serif;
-  --fs-base: 21px;
-  --fs-h1: 2.5rem;
-  --fs-h2: 1.75rem;
-  --fs-h3: 1.25rem;
-  --fs-lead: calc(var(--fs-base) + 5px);
-  --line-height: 1.6;
-}
 
 
 body{
@@ -80,7 +77,7 @@ body{
 
 
 header{
-  background:linear-gradient(90deg,var(--primary),#adb1b4);
+  background:linear-gradient(90deg,rgb(29, 29, 37),#2a2b2c);
   color:white;
   position: sticky;
   top: 0;
@@ -109,11 +106,6 @@ header{
   width:auto; 
   display:block; 
   border-radius:4px; 
-}
-
-.logo-text{ 
-  display:inline-block; 
-  color:inherit; 
 }
 
 .onglets{
@@ -199,17 +191,18 @@ footer a:hover {
 /* Styles supplémentaires pour l'accueil */
 
 .hero {
+  color: rgb(212, 195, 195);
   padding: 40px 0;
   background-image: var(--banner-image);
   background-size: cover;
   background-position: center;
   position: relative;
   z-index: 0;
-  /* léger overlay pour garder les couleurs ternes du thème */
-  background-color: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+  margin-bottom: 40px;
 }
 
 .hero h1 {
+  color: rgb(212, 195, 195);
   font-size: var(--fs-h1, 2.4rem);
   margin: 0 0 .4rem;
 }
@@ -218,6 +211,7 @@ footer a:hover {
   font-size: var(--fs-lead);
   max-width: none; /* permet au texte de s'étendre davantage */
   width: 100%;
+  margin-bottom: 15%;
 }
 
 /* Titres secondaires et hiérarchie */
@@ -246,8 +240,10 @@ h3 {
 }
 
 .btn.ghost {
+  color: rgb(212, 195, 195);
   background: transparent;
-  border: 2px solid rgba(12, 11, 11, 0.18);
+  border: 2px solid rgb(255, 255, 255);
+  margin-bottom: 5%;
 }
 
 .features h2 {
@@ -268,6 +264,9 @@ h3 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+.card p {
+  font-size: 22px;
+}
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 1.6rem;
@@ -292,39 +291,9 @@ section {
   scroll-margin-top: 88px;
 }
 
-/* Styles pour l'affichage de l'organigramme */
 
-.organigramme figure {
-  margin: 12px 0;
-}
 
-.organigramme img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-}
-
-.organigramme figcaption {
-  font-size: 0.9rem;
-  color: rgba(0,0,0,0.7);
-  margin-top: 6px;
-}
-
-/* Intégration visuelle du bloc organigramme */
-
-.organigramme {
-  background: rgba(255,255,255,0.03);
-  padding: 18px;
-  border-radius: 10px;
-}
-
-.organigramme a {
-  color: var(--primary);
-}
-
-/* ===== Catalogue / fiches produit ===== */
+/* Catalogue / produit */
 
 .card-link {
   display: block;
@@ -340,43 +309,55 @@ section {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 18px;
   margin-top: 12px;
   /* hauteur fixe pour maintenir l'espacement cohérent lors du filtrage */
-  grid-auto-rows: 320px;
+  grid-auto-rows: 640px;
 }
 
 .product-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
-  padding: 14px;
+  background: linear-gradient(180deg, rgba(238, 225, 225, 0.6), rgba(255,255,255,0.4));
+  padding: 22px;
   border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.288);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   height: 100%;
-  max-width: 260px;
-  min-height: 260px;
+  max-width: 390px;
+  min-height: 390px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* si vous préférez qu'une seule carte visible soit centrée, utilisez cette classe (optionnel)
-   .product-card.single-visible { justify-content: center; align-items: flex-start; } */
+.product-card h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
 
 @media (max-width: 900px) {
   .product-grid {
-    grid-auto-rows: 280px;
+    grid-auto-rows: 620px;
   }
 }
 
 @media (max-width: 600px) {
   .product-grid {
-    grid-auto-rows: 240px;
+    grid-auto-rows: 500px;
   }
 
   .product-card {
-    min-height: 220px;
+    min-height: 460px;
   }
 }
 
@@ -399,15 +380,20 @@ section {
 }
 
 .product-card p {
-  margin: .35rem 0 .6rem;
+  margin: .35rem 0 .2rem;
   color: rgba(0,0,0,0.7);
   flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 1.4rem;
 }
 
 .price {
   font-weight: 700;
   color: var(--primary);
-  font-size: 1.05rem;
+  font-size: 1.8rem;
 }
 
 .product-actions {
@@ -415,9 +401,10 @@ section {
 }
 
 .product-actions .btn {
-  font-size: 1rem;
-  padding: 8px 12px;
+  font-size: 1.4rem;
+  padding: 11px 15px;
   border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .product-list h2 {
@@ -438,12 +425,12 @@ section {
   display: inline-block;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.7);
+  background: rgb(199, 188, 188);
   color: var(--primary);
   text-decoration: none;
   font-weight: 600;
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 2px solid rgba(0, 0, 0, 0.404);
 }
 
 .category-tab:focus,
@@ -455,7 +442,7 @@ section {
 
 .category-tab.active {
   background: var(--primary);
-  color: #fff;
+  color: rgb(199, 188, 188);
   box-shadow: 0 10px 26px rgba(58,76,95,0.18);
   transform: none;
 }
@@ -499,7 +486,7 @@ section {
   scroll-margin-top: 96px;
 }
 
-/* Styles pour le formulaire de contact */
+/* Formulaire de contact */
 .contact-form {
   max-width: 640px;
   background: rgba(255,255,255,0.95);
@@ -727,7 +714,7 @@ section {
   }
 }
 
-/* ===== Styles de l'historique */
+/* A propos*/
 
 .timeline-section {
   background: rgba(170, 155, 155, 0.95);
@@ -748,6 +735,40 @@ section {
   color: var(--primary);
   font-size: 1.3rem;
   margin: 0 0 12px 0;
+}
+
+/* Notre parcours*/
+
+.timeline-year ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-year li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  color: rgba(0,0,0,0.7);
+  line-height: 1.6;
+}
+
+.timeline-year li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .timeline-section {
+    padding: 16px;
+    border-left-width: 3px;
+  }
+
+  .timeline-year h4 {
+    font-size: 1.1rem;
+  }
 }
 
 /*  l'organigramme  */
@@ -878,34 +899,35 @@ section {
 }
 
 
-.timeline-year ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+.organigramme figure {
+  margin: 12px 0;
 }
 
-.timeline-year li {
-  padding: 8px 0 8px 24px;
-  position: relative;
+.organigramme img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.organigramme figcaption {
+  font-size: 0.9rem;
   color: rgba(0,0,0,0.7);
-  line-height: 1.6;
+  margin-top: 6px;
 }
 
-.timeline-year li:before {
-  content: "▸";
-  position: absolute;
-  left: 0;
+
+
+.organigramme {
+  background: rgba(255,255,255,0.03);
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.organigramme a {
   color: var(--primary);
-  font-weight: bold;
 }
 
-@media (max-width: 600px) {
-  .timeline-section {
-    padding: 16px;
-    border-left-width: 3px;
-  }
 
-  .timeline-year h4 {
-    font-size: 1.1rem;
-  }
-}
