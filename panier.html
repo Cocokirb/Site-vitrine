@@ -189,9 +189,7 @@
 
     // Bouton paiement
     document.getElementById('checkout-btn')?.addEventListener('click', function() {
-      alert('Merci d\'avoir commandé ! Paiement en cours...\n\nCette fonctionnalité est une démonstration.');
-      clearCart();
-      renderCart();
+      window.location.href = 'paiement.html';
     });
 
     // Afficher le panier au chargement

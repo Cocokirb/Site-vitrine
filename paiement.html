@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Paiement — Sonoris</title>
+  <link rel="stylesheet" href="site_vitrine_accueil.css">
+</head>
+<body>
+  <header>
+    <div class="head container">
+      <div class="logo">
+        <img class="logo-img" src="image/Logo entreprise Sonoris.jpg" alt="Sonoris">
+        <span class="logo-text">Sonoris</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul class="onglets">
+          <li><a href="site_vitrine_accueil.html">Accueil</a></li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="paiement-title">
+      <h1 id="paiement-title">Finaliser votre commande</h1>
+
+      <br>
+
+      <div class="paiement-container">
+        <!-- Section gauche : Formulaire de paiement -->
+        <div class="paiement-form-section">
+          <h2>Informations de facturation</h2>
+          
+          <form id="payment-form" class="payment-form">
+            
+            <!-- Section 1 : Informations personnelles -->
+            <fieldset>
+              <h3>Vos informations</h3>
+              
+              <div class="form-group">
+                <label for="prenom">Prénom <span class="required">*</span></label>
+                <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+                <span class="error-message" id="error-prenom"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="nom">Nom <span class="required">*</span></label>
+                <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+                <span class="error-message" id="error-nom"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
+                <span class="error-message" id="error-email"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="telephone">Téléphone <span class="required">*</span></label>
+                <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required>
+                <span class="error-message" id="error-telephone"></span>
+              </div>
+            </fieldset>
+
+            <!-- Section 2 : Adresse de livraison -->
+            <fieldset>
+              <h3>Adresse de livraison</h3>
+              
+              <div class="form-group">
+                <label for="adresse">Adresse <span class="required">*</span></label>
+                <input type="text" id="adresse" name="adresse" placeholder="123 rue de la Musique" required>
+                <span class="error-message" id="error-adresse"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="codepostal">Code postal <span class="required">*</span></label>
+                <input type="text" id="codepostal" name="codepostal" placeholder="75000" required>
+                <span class="error-message" id="error-codepostal"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="ville">Ville <span class="required">*</span></label>
+                <input type="text" id="ville" name="ville" placeholder="Paris" required>
+                <span class="error-message" id="error-ville"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="pays">Pays <span class="required">*</span></label>
+                <input type="text" id="pays" name="pays" placeholder="France" required>
+                <span class="error-message" id="error-pays"></span>
+              </div>
+            </fieldset>
+
+            <!-- Section 3 : Informations de paiement -->
+            <fieldset>
+              <h3>Informations de paiement</h3>
+              
+              <div class="form-group">
+                <label for="cardname">Nom sur la carte <span class="required">*</span></label>
+                <input type="text" id="cardname" name="cardname" placeholder="JEAN DUPONT" required>
+                <span class="error-message" id="error-cardname"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="cardnumber">Numéro de carte <span class="required">*</span></label>
+                <input type="text" id="cardnumber" name="cardnumber" placeholder="4532 1234 5678 9010" maxlength="19" required>
+                <span class="error-message" id="error-cardnumber"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="expiry">Date d'expiration <span class="required">*</span></label>
+                  <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+                  <span class="error-message" id="error-expiry"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="cvv">CVV <span class="required">*</span></label>
+                  <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+                  <span class="error-message" id="error-cvv"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <a href="panier.html" class="btn ghost">Retour au panier</a>
+              <button type="submit" class="btn" id="submit-btn">Valider le paiement</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Section droite : Résumé de commande -->
+        <div class="paiement-summary-section">
+          <h2>Résumé de votre commande</h2>
+          
+          <div id="order-summary" class="order-summary">
+            <div id="order-items"></div>
+            
+            <div class="summary-divider"></div>
+            
+            <div class="summary-row">
+              <span>Sous-total :</span>
+              <span id="summary-subtotal">€0,00</span>
+            </div>
+            
+            <div class="summary-row">
+              <span>Frais de port :</span>
+              <span>€10,00</span>
+            </div>
+            
+            <div class="summary-row total">
+              <span><strong>TOTAL :</strong></span>
+              <span id="summary-total"><strong>€10,00</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de confirmation -->
+  <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+      <div class="confirmation-header">
+        <h2>✓ Commande validée !</h2>
+      </div>
+      
+      <div class="confirmation-body">
+        <p>Votre paiement a été accepté avec succès.</p>
+        
+        <div class="confirmation-details">
+          <div class="detail-row">
+            <span>Numéro de commande :</span>
+            <strong id="order-number"></strong>
+          </div>
+          
+          <div class="detail-row">
+            <span>Nom :</span>
+            <strong id="conf-name"></strong>
+          </div>
+          
+          <div class="detail-row">
+            <span>Email :</span>
+            <strong id="conf-email"></strong>
+          </div>
+          
+          <div class="detail-row">
+            <span>Adresse de livraison :</span>
+            <strong id="conf-address"></strong>
+          </div>
+          
+          <div class="detail-row">
+            <span>Montant payé :</span>
+            <strong id="conf-total" style="color: #27ae60;"></strong>
+          </div>
+          
+          <div class="detail-row">
+            <span>Date :</span>
+            <strong id="conf-date"></strong>
+          </div>
+        </div>
+        
+        <p style="margin-top: 20px; font-style: italic; color: rgba(0,0,0,0.6);">Un e-mail de confirmation vous a été envoyé avec les détails de votre commande et les informations de suivi.</p>
+      </div>
+      
+      <div class="modal-actions">
+        <button class="btn" onclick="returnToHome()">Retour à l'accueil</button>
+        <button class="btn ghost" onclick="continueShopping()">Continuer vos achats</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p><a href="mailto:sonoris.musique@gmail.com">sonoris.musique@gmail.com</a></p>
+          <p><small>© 2026 Corentin — Sonoris</small></p>
+        </div>
+        <div class="footer-column">
+          <h4>Nos réseaux</h4>
+          <ul>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://www.twitter.com/">X (Twitter)</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Produits disponibles
+    const products = {
+      'product-guitare': { name: 'Guitare électrique Standard', price: 349.00 },
+      'product-guitare-classique': { name: 'Guitare classique 39 pouces', price: 169.00 },
+      'product-basse': { name: 'Basse 4 cordes', price: 289.00 },
+      'product-batterie': { name: 'Batterie électronique 5 pièces', price: 379.00 },
+      'product-clavier': { name: 'Clavier numérique 61 touches', price: 219.00 },
+      'product-sono': { name: 'Enceinte active 12"', price: 429.00 },
+      'product-ampli': { name: 'Amplificateur guitare 50W', price: 299.00 },
+      'product-micro': { name: 'Micro cardioïde de studio', price: 129.00 },
+      'product-casque': { name: 'Casque studio fermé', price: 79.00 },
+      'product-cordes': { name: 'Jeu de cordes guitare premium', price: 24.99 },
+      'product-baguettes': { name: 'Baguettes batterie pro', price: 12.99 },
+      'product-mediator': { name: 'Médiator guitare pack', price: 8.99 }
+    };
+
+    const SHIPPING_FEE = 10.00;
+    let isSubmitting = false; // Drapeau pour empêcher les soumissions multiples
+
+    function loadCart() {
+      return JSON.parse(localStorage.getItem('cart')) || {};
+    }
+
+    function getOrderTotal() {
+      const cart = loadCart();
+      let subtotal = 0;
+      
+      for (const [productId, quantity] of Object.entries(cart)) {
+        const product = products[productId];
+        if (product) {
+          subtotal += product.price * quantity;
+        }
+      }
+      
+      return {
+        subtotal: subtotal,
+        shipping: SHIPPING_FEE,
+        total: subtotal + SHIPPING_FEE
+      };
+    }
+
+    function renderOrderSummary() {
+      const cart = loadCart();
+      const orderItems = document.getElementById('order-items');
+      const totals = getOrderTotal();
+
+      orderItems.innerHTML = '';
+
+      for (const [productId, quantity] of Object.entries(cart)) {
+        const product = products[productId];
+        if (!product) continue;
+
+        const itemTotal = product.price * quantity;
+        const div = document.createElement('div');
+        div.className = 'summary-item';
+        div.innerHTML = `
+          <div class="item-name">${product.name}</div>
+          <div class="item-detail">
+            <span>${quantity}x €${product.price.toFixed(2)}</span>
+            <span style="font-weight: bold;">€${itemTotal.toFixed(2)}</span>
+          </div>
+        `;
+        orderItems.appendChild(div);
+      }
+
+      document.getElementById('summary-subtotal').textContent = '€' + totals.subtotal.toFixed(2);
+      document.getElementById('summary-total').textContent = '€' + totals.total.toFixed(2);
+    }
+
+    // Validation du formulaire
+    function validateForm() {
+      let isValid = true;
+      const fields = {
+        'prenom': 'Le prénom est obligatoire',
+        'nom': 'Le nom est obligatoire',
+        'email': 'L\'email est obligatoire et doit être valide',
+        'telephone': 'Le téléphone est obligatoire',
+        'adresse': 'L\'adresse est obligatoire',
+        'codepostal': 'Le code postal est obligatoire',
+        'ville': 'La ville est obligatoire',
+        'pays': 'Le pays est obligatoire',
+        'cardname': 'Le nom sur la carte est obligatoire',
+        'cardnumber': 'Le numéro de carte est obligatoire (16 chiffres)',
+        'expiry': 'La date d\'expiration est obligatoire (MM/YY)',
+        'cvv': 'Le CVV est obligatoire (3 chiffres)'
+      };
+
+      // Nettoyer les messages d'erreur
+      for (const fieldId in fields) {
+        document.getElementById('error-' + fieldId).textContent = '';
+      }
+
+      // Valider email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const email = document.getElementById('email').value;
+      if (!emailRegex.test(email)) {
+        document.getElementById('error-email').textContent = 'Email invalide';
+        isValid = false;
+      }
+
+      // Valider numéro de téléphone
+      const telRegex = /^[0-9\s\-\+\.]+$/;
+      const tel = document.getElementById('telephone').value;
+      if (!telRegex.test(tel) || tel.replace(/\D/g, '').length < 9) {
+        document.getElementById('error-telephone').textContent = 'Téléphone invalide';
+        isValid = false;
+      }
+
+      // Valider code postal
+      const cpRegex = /^[0-9]{5}$/;
+      const cp = document.getElementById('codepostal').value;
+      if (!cpRegex.test(cp)) {
+        document.getElementById('error-codepostal').textContent = 'Code postal invalide (5 chiffres)';
+        isValid = false;
+      }
+
+      // Valider carte bancaire
+      const cardRegex = /^[0-9\s]{16,19}$/;
+      const cardNumber = document.getElementById('cardnumber').value;
+      if (!cardRegex.test(cardNumber)) {
+        document.getElementById('error-cardnumber').textContent = 'Numéro de carte invalide';
+        isValid = false;
+      }
+
+      // Valider date expiration
+      const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+      const expiry = document.getElementById('expiry').value;
+      if (!expiryRegex.test(expiry)) {
+        document.getElementById('error-expiry').textContent = 'Date invalide (MM/YY)';
+        isValid = false;
+      }
+
+      // Valider CVV
+      const cvvRegex = /^[0-9]{3}$/;
+      const cvv = document.getElementById('cvv').value;
+      if (!cvvRegex.test(cvv)) {
+        document.getElementById('error-cvv').textContent = 'CVV invalide (3 chiffres)';
+        isValid = false;
+      }
+
+      // Vérifier les champs vides
+      for (const fieldId in fields) {
+        const field = document.getElementById(fieldId);
+        if (!field.value.trim()) {
+          document.getElementById('error-' + fieldId).textContent = fields[fieldId];
+          isValid = false;
+        }
+      }
+
+      return isValid;
+    }
+
+    // Soumettre le formulaire
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Empêcher les soumissions multiples
+      if (isSubmitting) {
+        return;
+      }
+
+      // Valider d'abord avant toute autre action
+      if (!validateForm()) {
+        window.scrollTo(0, 0);
+        return;
+      }
+
+      // Marquer comme en cours de soumission
+      isSubmitting = true;
+      
+      // Désactiver le bouton submit
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Traitement en cours...';
+
+      // Générer un numéro de commande
+      const orderNumber = 'CMD-' + Date.now();
+      const prenom = document.getElementById('prenom').value;
+      const nom = document.getElementById('nom').value;
+      const email = document.getElementById('email').value;
+      const adresse = document.getElementById('adresse').value;
+      const codepostal = document.getElementById('codepostal').value;
+      const ville = document.getElementById('ville').value;
+      const totals = getOrderTotal();
+
+      // Remplir la modal de confirmation
+      document.getElementById('order-number').textContent = orderNumber;
+      document.getElementById('conf-name').textContent = prenom + ' ' + nom;
+      document.getElementById('conf-email').textContent = email;
+      document.getElementById('conf-address').textContent = adresse + ', ' + codepostal + ' ' + ville;
+      document.getElementById('conf-total').textContent = '€' + totals.total.toFixed(2);
+      document.getElementById('conf-date').textContent = new Date().toLocaleDateString('fr-FR');
+
+      // Vérifier que tout est bien rempli avant d'afficher la modal
+      if (orderNumber && prenom && nom && email && totals.total > 0) {
+        // Afficher la modal SEULEMENT si tout est validé
+        const modal = document.getElementById('confirmation-modal');
+        if (modal) {
+          modal.classList.add('active');
+        }
+
+        // Vider le panier
+        localStorage.setItem('cart', JSON.stringify({}));
+      } else {
+        // En cas de problème, réafficher les erreurs
+        isSubmitting = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Valider le paiement';
+        alert('Erreur : certaines informations sont manquantes');
+      }
+    });
+
+    function returnToHome() {
+      window.location.href = 'site_vitrine_accueil.html';
+    }
+
+    function continueShopping() {
+      window.location.href = 'catalogue.html';
+    }
+
+    // Format automatique du numéro de carte
+    document.getElementById('cardnumber').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\s/g, '');
+      let formattedValue = value.replace(/(\d{4})/g, '$1 ').trim();
+      e.target.value = formattedValue;
+    });
+
+    // Format automatique de la date d'expiration
+    document.getElementById('expiry').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length >= 2) {
+        value = value.slice(0, 2) + '/' + value.slice(2, 4);
+      }
+      e.target.value = value;
+    });
+
+    // Format automatique du CVV
+    document.getElementById('cvv').addEventListener('input', function(e) {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 3);
+    });
+
+    // Afficher le résumé au chargement
+    renderOrderSummary();
+  </script>
+</body>
+</html>
