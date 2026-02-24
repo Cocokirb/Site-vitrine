@@ -48,7 +48,7 @@
         <a class="category-tab active" href="#product-list-all" aria-pressed="true">Tous</a>
         <a class="category-tab" href="#category-instruments">Instruments</a>
         <a class="category-tab" href="#category-sonorisation">Sonorisation</a>
-        <a class="category-tab" href="#category-accessoires">Accessoires</a>
+        <a class="category-tab" href="#category-accessoires-instruments">Accessoires Instrument</a>
       </nav>
 
       <br>
@@ -60,8 +60,9 @@
         <div class="product-grid" aria-live="polite">
           <!-- Liste de tous les produits (sans filtre) -->
           <!-- Instruments -->
+           <!-- Guitare éléctrique -->
           <article id="product-guitare" class="product-card" data-category="instruments" aria-labelledby="guitare-title">
-          <figure class="product-media">
+            <figure class="product-media">
 
             <img src="image/product-guitare.svg" alt="Guitare électrique Standard — image produit" width="360" height="200">
 
@@ -72,6 +73,20 @@
             <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
           </article>
 
+          <!-- Guitare -->
+          <article id="product-guitare-classique" class="product-card" data-category="instruments" aria-labelledby="guitare-classique-title">
+            <figure class="product-media">
+
+            <img src="image/product-guitare-classique.svg" alt="Guitare classique 39 pouces — image produit" width="360" height="200">
+
+            </figure>
+            <h2 id="guitare-classique-title">Guitare classique 39 pouces</h2>
+            <p>Son chaud et cristallin, table en épicéa massif, idéale pour débutants et confirmés.</p>
+            <div class="price">€169,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <!-- Basse -->
           <article id="product-basse" class="product-card" data-category="instruments" aria-labelledby="basse-title">
           <figure class="product-media">
 
@@ -84,6 +99,20 @@
             <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
           </article>
 
+          <!-- Batterie -->
+          <article id="product-batterie" class="product-card" data-category="instruments" aria-labelledby="batterie-title">
+            <figure class="product-media">
+
+            <img src="image/product-batterie.svg" alt="Batterie électronique 5 pièces — image produit" width="360" height="200">
+
+            </figure>
+            <h2 id="batterie-title">Batterie électronique 5 pièces</h2>
+            <p>Pad sensible au toucher, sons authentiques, USB et MIDI intégrés.</p>
+            <div class="price">€379,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <!-- Clavier -->
           <article id="product-clavier" class="product-card" data-category="instruments" aria-labelledby="clavier-title">
           <figure class="product-media">
 
@@ -97,6 +126,7 @@
           </article>
 
           <!-- Sonorisation -->
+           <!-- Enceinte -->
           <article id="product-sono" class="product-card" data-category="sonorisation" aria-labelledby="sono-title">
             <figure class="product-media">
 
@@ -109,6 +139,20 @@
             <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
           </article>
 
+          <!-- Ampli -->
+          <article id="product-ampli" class="product-card" data-category="sonorisation" aria-labelledby="ampli-title">
+            <figure class="product-media">
+
+            <img src="image/product-ampli.svg" alt="Amplificateur guitare 50W — image produit" width="360" height="200">
+
+            </figure>
+            <h2 id="ampli-title">Amplificateur guitare 50W</h2>
+            <p>Son clair et saturé, réglages avancés, parfait pour répétitions et petits concerts.</p>
+            <div class="price">€299,00</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <!-- Micro -->
           <article id="product-micro" class="product-card" data-category="sonorisation" aria-labelledby="micro-title">
             <figure class="product-media">
 
@@ -121,8 +165,8 @@
             <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
           </article>
 
-          <!-- Accessoires -->
-          <article id="product-casque" class="product-card" data-category="accessoires" aria-labelledby="casque-title">
+          <!-- Casque -->
+          <article id="product-casque" class="product-card" data-category="sonorisation" aria-labelledby="casque-title">
           <figure class="product-media">
 
             <img src="image/product-casque.svg" alt="Casque studio fermé — image produit" width="360" height="200">
@@ -133,6 +177,47 @@
             <div class="price">€79,00</div>
             <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
           </article>
+
+          <!-- Accessoires Instrument -->
+           <!-- Baguettes batterie -->
+          <article id="product-baguettes" class="product-card" data-category="accessoires-instruments" aria-labelledby="baguettes-title">
+            <figure class="product-media">
+
+            <img src="image/product-baguettes.svg" alt="Baguettes batterie pro — image produit" width="360" height="200">
+
+            </figure>
+            <h2 id="baguettes-title">Baguettes batterie pro</h2>
+            <p>Paire de baguettes en hickory, embout nylon, légères et durables pour tous styles.</p>
+            <div class="price">€12,99</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <!-- Médiator -->
+          <article id="product-mediator" class="product-card" data-category="accessoires-instruments" aria-labelledby="mediator-title">
+            <figure class="product-media">
+
+            <img src="image/product-mediator.svg" alt="Médiator guitare pack — image produit" width="360" height="200">
+
+            </figure>
+            <h2 id="mediator-title">Médiator guitare pack</h2>
+            <p>Paquet de 12 médiators, différentes épaisseurs, son brillant et précis.</p>
+            <div class="price">€8,99</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
+          <!-- Corde guitare -->
+          <article id="product-cordes" class="product-card" data-category="accessoires-instruments" aria-labelledby="cordes-title">
+            <figure class="product-media">
+
+            <img src="image/product-cordes.svg" alt="Jeu de cordes guitare premium — image produit" width="360" height="200">
+
+            </figure>
+            <h2 id="cordes-title">Jeu de cordes guitare premium</h2>
+            <p>Cordes en bronze phosphoreux, son brillant et durable, paquet de 3 jeux.</p>
+            <div class="price">€24,99</div>
+            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
+          </article>
+
         </div>
       </section>
 
@@ -178,7 +263,7 @@
       document.querySelectorAll('.product-actions .btn').forEach(btn => {
         const card = btn.closest('.product-card');
         const productId = card.id;
-        const productName = card.querySelector('h3').textContent;
+        const productName = card.querySelector('h2').textContent;
         const productPrice = parseFloat(card.querySelector('.price').textContent.replace('€', ''));
         
         btn.textContent = 'Ajouter au panier';
