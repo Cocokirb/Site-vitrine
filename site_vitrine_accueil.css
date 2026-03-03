@@ -278,10 +278,11 @@ h3 {
   text-decoration: none;
   margin-right: 8px;
   font-size: 25px;
+
 }
 
 .btn.ghost {
-  color: rgb(212, 195, 195);
+  color: white;
   background: transparent;
   border: 2px solid rgb(255, 255, 255);
   margin-bottom: 5%;
@@ -303,10 +304,16 @@ h3 {
   padding: 14px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
 }
 
 .card p {
   font-size: 22px;
+}
+
+.card p:last-child {
+  margin-top: auto;
 }
 @media (max-width: 600px) {
   .hero h1 {
@@ -982,7 +989,7 @@ section {
 }
 
 .valeur-item {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(224, 216, 216, 0.95);
   padding: 24px;
   border-radius: 10px;
   flex: 1;
@@ -1001,13 +1008,13 @@ section {
 .valeur-item h3 {
   color: var(--primary);
   margin: 0 0 12px 0;
-  font-size: var(--fs-h3);
+  font-size: 1.35rem;
 }
 
 .valeur-item p {
   margin: 0;
   color: var(--text);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   line-height: 1.5;
 }
 
