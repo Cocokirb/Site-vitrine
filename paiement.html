@@ -169,7 +169,7 @@
     </section>
   </main>
 
-  <!-- Modal de confirmation -->
+  <!-- page de confirmation -->
   <div id="confirmation-modal" class="modal">
     <div class="modal-content">
       <div class="confirmation-header">
@@ -308,7 +308,7 @@
       }
 
       document.getElementById('summary-subtotal').textContent = '€' + totals.subtotal.toFixed(2);
-      document.getElementById('summary-total').textContent = '€' + totals.total.toFixed(2);
+      document.getElementById('summary-total').innerHTML = '<strong>€' + totals.total.toFixed(2) + '</strong>';
     }
 
     // Validation du formulaire

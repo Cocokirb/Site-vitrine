@@ -1,0 +1,13 @@
+code_produit,nom_produit,description_produit,Qté_stock,prix_TTC,image
+1,Guitare électrique Standard,Corps en aulne manche érable son polyvalent pour scène et studio,0,349.00,
+2,Guitare classique 39 pouces,Son chaud et cristallin table en épicéa massif idéale pour débutants et confirmés,0,169.00,
+3,Basse 4 cordes,Idéale pour répétitions et concerts électronique active,0,289.00,
+4,Batterie électronique 5 pièces,Pad sensible au toucher sons authentiques USB et MIDI intégrés,0,379.00,
+5,Clavier numérique 61 touches,Sonorités réalistes sortie MIDI/USB léger et portable,0,219.00,
+6,Enceinte active 12",Puissance pour petites scènes DSP intégré,0,429.00,
+7,Amplificateur guitare 50W,Son clair et saturé réglages avancés parfait pour répétitions et petits concerts,0,299.00,
+8,Micro cardioïde de studio,Conçu pour voix et instruments livré avec suspension,0,129.00,
+9,Casque studio fermé,Confort longue durée réponse neutre pour mix,0,79.00,
+10,Baguettes batterie pro,Paire de baguettes en hickory embout nylon légères et durables pour tous styles,0,12.99,
+11,Médiator guitare pack,Paquet de 12 médiators différentes épaisseurs son brillant et précis,0,8.99,
+12,Jeu de cordes guitare premium,Cordes en bronze phosphoreux son brillant et durable paquet de 3 jeux,0,24.99,

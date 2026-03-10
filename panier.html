@@ -38,7 +38,7 @@
       
       <div id="cart-empty" style="text-align: center; padding: 40px 0;">
         
-        <p style="font-size: 1.1rem; color: rgba(0,0,0,0.6);"> Votre panier est vide</p>
+        <p style="font-size: 1.3rem; color: rgba(0,0,0,0.6);"> Votre panier est vide</p>
         <p><a class="btn" href="catalogue.html">Continuer vos achats</a></p>
       </div>
 
@@ -140,6 +140,7 @@
       cartEmpty.style.display = 'none';
 
       let total = 0;
+      const SHIPPING_FEE = 10.00;
 
       for (const [productId, quantity] of Object.entries(cart)) {
         const product = products[productId];
@@ -165,8 +166,9 @@
         cartItems.appendChild(row);
       }
 
+      const totalWithShipping = total + SHIPPING_FEE;
       document.getElementById('subtotal').textContent = '€' + total.toFixed(2);
-      document.getElementById('total').textContent = '€' + total.toFixed(2);
+      document.getElementById('total').textContent = '€' + totalWithShipping.toFixed(2);
     }
 
     function updateQty(productId, qty) {
