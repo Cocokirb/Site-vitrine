@@ -766,7 +766,7 @@ section {
 /* A propos*/
 
 .timeline-section {
-  background: rgba(170, 155, 155, 0.95);
+  background: rgba(196, 172, 172, 0.95);
   padding: 20px;
   margin: 16px 0;
   border-radius: 10px;
@@ -1017,6 +1017,53 @@ section {
   color: var(--text);
   font-size: 1.15rem;
   line-height: 1.5;
+}
+
+/* Styles pour les sections À propos et Engagements */
+.about-section {
+  display: flex;
+  background: linear-gradient(135deg, rgba(116, 163, 209, 0.685), rgba(49, 112, 179, 0.76));
+  padding: 28px;
+  border-radius: 10px;
+  border-left: 5px solid var(--primary);
+  margin: 24px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.about-section p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.engagement-section {
+  display: flex;
+  background: linear-gradient(135deg, rgb(158, 59, 59), rgba(192, 69, 69, 0.89));
+  padding: 28px;
+  border-radius: 10px;
+  border-left: 5px solid #c4acac;
+  margin: 24px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.engagement-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.engagement-section p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 /* ============ STYLES PAGE PAIEMENT ============ */
