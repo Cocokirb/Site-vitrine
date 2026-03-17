@@ -1,37 +1,6 @@
-    
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Panier — Sonoris</title>
-  <link rel="stylesheet" href="site_vitrine_accueil.css">
-  <link rel="shortcut icon" href= "image/Logo Onglet Sonoris.jpg" type="image/x-icon">
-</head>
-<body>
-  <header>
-    <div class="head container">
-      <div class="logo">
-        <a href="site_vitrine_accueil.html" class="logo-link">
-          <img class="logo-img" src="image/Logo entreprise Sonoris.jpg" alt="Logo Sonoris">
-        </a>
-      </div>
-      <nav aria-label="Navigation principale">
-        <ul class="onglets">
-          <li><a href="site_vitrine_accueil.html">Accueil</a></li>
-          <li><a href="catalogue.html">Catalogue</a></li>
-          <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
-        </ul>
-      </nav>
-      <a href="panier.html" class="panier-link" aria-label="Accéder au panier">
-        <svg class="panier-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-      </a>
-    </div>
-  </header>
+<?php
+    include __DIR__ .'/includes/header.php' ;
+?>
 
   <main class="container">
     <section aria-labelledby="panier-title">
@@ -40,7 +9,7 @@
       <div id="cart-empty" style="text-align: center; padding: 40px 0;">
         
         <p style="font-size: 1.3rem; color: rgba(0,0,0,0.6);"> Votre panier est vide</p>
-        <p><a class="btn" href="catalogue.html">Continuer vos achats</a></p>
+        <p><a class="btn" href="catalogue.php">Continuer vos achats</a></p>
       </div>
 
       <div id="cart-content" style="display: none;">
@@ -75,7 +44,7 @@
         </div>
 
         <div class="cart-actions">
-          <a class="btn ghost" href="catalogue.html">Continuer vos achats</a>
+          <a class="btn ghost" href="catalogue.php">Continuer vos achats</a>
           <button class="btn" id="checkout-btn">Procéder au paiement</button>
         </div>
       </div>
@@ -83,25 +52,6 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h4>Contact</h4>
-          <p><a href="mailto:sonoris.musique@gmail.com">sonoris.musique@gmail.com</a></p>
-          <p><small>© 2026 Corentin — Sonoris</small></p>
-        </div>
-        <div class="footer-column">
-          <h4>Nos réseaux</h4>
-          <ul>
-            <li><a href="https://www.facebook.com/">Facebook</a></li>
-            <li><a href="https://www.twitter.com/">X (Twitter)</a></li>
-            <li><a href="https://www.instagram.com/">Instagram</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <script>
     // Produits disponibles
@@ -206,11 +156,13 @@
 
     // Bouton paiement
     document.getElementById('checkout-btn')?.addEventListener('click', function() {
-      window.location.href = 'paiement.html';
+      window.location.href = 'paiement.php';
     });
 
     // Afficher le panier au chargement
     renderCart();
   </script>
-</body>
-</html>
+
+<?php
+    include __DIR__ .'/includes/footer.php' ;
+?>
