@@ -1,4 +1,5 @@
 <?php
+    $titrePage = "Catalogue — Sonoris";
     include __DIR__ .'/includes/header.php' ;
 ?>
 
@@ -11,7 +12,7 @@
 
     <section class="product-list" aria-label="Catalogue produits">
       <br>
-      <p style="margin-bottom: 16px;"><a class="btn" href="panier.php">Voir le panier 🛒</a></p>
+      <p style="margin-bottom: 16px; color: white;"><a class="btn" href="panier.php">Voir le panier 🛒</a></p>
 
       <br>
       <br>

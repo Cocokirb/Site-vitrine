@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>À propos de nous — Sonoris</title>
+  <title><?=  $titrePage ?></title>
   <link rel="stylesheet" href="site_vitrine_accueil.css">
   <link rel="shortcut icon" href= "image/Logo Onglet Sonoris.jpg" type="image/x-icon">
 </head>

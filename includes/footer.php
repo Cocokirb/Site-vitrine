@@ -1,4 +1,5 @@
 <footer>
+    <link rel="stylesheet" href="site_vitrine_accueil.css">
         <div class="container">
           <div class="footer-grid">
             <div class="footer-column">

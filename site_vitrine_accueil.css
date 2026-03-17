@@ -32,8 +32,8 @@ a{
   color: rgb(43, 147, 216);
 }
 
-a:visited{
-  color: rgb(0, 0, 0);
+footer a:visited{
+  color: rgb(131, 120, 120);
 }
 
 nav ul{
@@ -185,6 +185,8 @@ footer a:hover {
   color: white;
 }
 
+
+
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -308,6 +310,10 @@ h3 {
   flex-direction: column;
 }
 
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
 .card p {
   font-size: 22px;
 }

@@ -1,4 +1,5 @@
 <?php
+    $titrePage = "Accueil — Sonoris";
     include __DIR__ .'/includes/header.php' ;
 ?>
 
