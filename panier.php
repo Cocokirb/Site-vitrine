@@ -5,7 +5,7 @@
 
   <main class="container">
     <section aria-labelledby="panier-title">
-      <h1 id="panier-title">Panier</h1>
+      <h1 id="panier-title">Panier</h1> <br>
       
       <div id="cart-empty" style="text-align: center; padding: 40px 0;">
         <p style="font-size: 1.3rem; color: rgba(0,0,0,0.6);"> Votre panier est vide</p>
