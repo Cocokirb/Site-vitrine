@@ -54,7 +54,7 @@
           <article id="product-guitare-classique" class="product-card" data-category="instruments" aria-labelledby="guitare-classique-title">
             <figure class="product-media">
 
-            <img src="image/product-guitare-classique.svg" alt="Guitare classique 39 pouces — image produit" width="360" height="200">
+            <img src="image/Catalogue/Guitare classique 39 pouces.jpg" alt="Guitare classique 39 pouces — image produit" width="360" height="200">
 
             </figure>
             <h2 id="guitare-classique-title">Guitare classique 39 pouces</h2>
@@ -93,7 +93,7 @@
           <article id="product-clavier" class="product-card" data-category="instruments" aria-labelledby="clavier-title">
           <figure class="product-media">
 
-            <img src="image/product-clavier.svg" alt="Clavier numérique 61 touches — image produit" width="360" height="200">
+            <img src="image/Catalogue/Clavier musical numérique 61 touches.jpg" alt="Clavier numérique 61 touches — image produit" width="360" height="200">
 
             </figure>
             <h2 id="clavier-title">Clavier numérique 61 touches</h2>
@@ -107,7 +107,7 @@
           <article id="product-sono" class="product-card" data-category="sonorisation" aria-labelledby="sono-title">
             <figure class="product-media">
 
-            <img src="image/product-sono.svg" alt="Enceinte active 12\" — image produit" width="360" height="200">
+            <img src="image/Catalogue/Enceinte sonorisation active 12_.jpg" alt="Enceinte active 12\ — image produit" width="360" height="200">
 
           </figure>
             <h2 id="sono-title">Enceinte active 12"</h2>
@@ -120,7 +120,7 @@
           <article id="product-ampli" class="product-card" data-category="sonorisation" aria-labelledby="ampli-title">
             <figure class="product-media">
 
-            <img src="image/product-ampli.svg" alt="Amplificateur guitare 50W — image produit" width="360" height="200">
+            <img src="image/Catalogue/Amplificateur guitare 50W.jpg" alt="Amplificateur guitare 50W — image produit" width="360" height="200">
 
             </figure>
             <h2 id="ampli-title">Amplificateur guitare 50W</h2>
@@ -133,7 +133,7 @@
           <article id="product-micro" class="product-card" data-category="sonorisation" aria-labelledby="micro-title">
             <figure class="product-media">
 
-            <img src="image/product-micro.svg" alt="Micro cardioïde de studio — image produit" width="360" height="200">
+            <img src="image/Catalogue/Micro cardioïde de studio.jpg" alt="Micro cardioïde de studio — image produit" width="360" height="200">
 
           </figure>
             <h2 id="micro-title">Micro cardioïde de studio</h2>
@@ -156,7 +156,7 @@
           </article>
 
           <!-- Accessoires Instrument -->
-           <!-- Baguettes batterie -->
+            <!-- Baguettes batterie -->
           <article id="product-baguettes" class="product-card" data-category="accessoires-instruments" aria-labelledby="baguettes-title">
             <figure class="product-media">
 
