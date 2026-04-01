@@ -8,14 +8,15 @@
       <br>
       <h1>Catalogue — Tous les produits</h1>
       <p class="intro">Découvrez notre sélection de matériel neuf et reconditionné. Cliquez sur un produit pour voir plus de détails ou l'ajouter au panier.</p>
-    </section>
-
-    <section class="product-list" aria-label="Catalogue produits">
       <br>
       <p style="margin-bottom: 16px; color: white;"><a class="btn" href="panier.php">Voir le panier 🛒</a></p>
 
       <br>
       <br>
+    </section>
+
+    <section class="product-list" aria-label="Catalogue produits">
+      
 
       <h1>Articles disponibles</h1>
 
@@ -146,7 +147,7 @@
           <article id="product-casque" class="product-card" data-category="sonorisation" aria-labelledby="casque-title">
           <figure class="product-media">
 
-            <img src="image/product-casque.svg" alt="Casque studio fermé — image produit" width="360" height="200">
+            <img src="image/Catalogue/Casque pour studio fermé.jpg" alt="Casque studio fermé — image produit" width="360" height="200">
  
           </figure>
             <h2 id="casque-title">Casque studio fermé</h2>
@@ -160,7 +161,7 @@
           <article id="product-baguettes" class="product-card" data-category="accessoires-instruments" aria-labelledby="baguettes-title">
             <figure class="product-media">
 
-            <img src="image/product-baguettes.svg" alt="Baguettes batterie pro — image produit" width="360" height="200">
+            <img src="image/Catalogue/Baguettes pour batterie pro.jpg" alt="Baguettes batterie pro — image produit" width="360" height="200">
 
             </figure>
             <h2 id="baguettes-title">Baguettes batterie pro</h2>
@@ -173,7 +174,7 @@
           <article id="product-mediator" class="product-card" data-category="accessoires-instruments" aria-labelledby="mediator-title">
             <figure class="product-media">
 
-            <img src="image/product-mediator.svg" alt="Médiator guitare pack — image produit" width="360" height="200">
+            <img src="image/Catalogue/Médiator guitare pack.jpg" alt="Médiator guitare pack — image produit" width="360" height="200">
 
             </figure>
             <h2 id="mediator-title">Médiator guitare pack</h2>
@@ -186,7 +187,7 @@
           <article id="product-cordes" class="product-card" data-category="accessoires-instruments" aria-labelledby="cordes-title">
             <figure class="product-media">
 
-            <img src="image/product-cordes.svg" alt="Jeu de cordes guitare premium — image produit" width="360" height="200">
+            <img src="image/Catalogue/Jeu de cordes guitare.jpg" alt="Jeu de cordes guitare premium — image produit" width="360" height="200">
 
             </figure>
             <h2 id="cordes-title">Jeu de cordes guitare premium</h2>

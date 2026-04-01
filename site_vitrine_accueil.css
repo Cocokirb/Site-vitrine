@@ -349,6 +349,14 @@ section {
 
 /* Catalogue / produit */
 
+.catalog-hero{
+  background: linear-gradient(135deg, rgba(116, 163, 209, 0.685), rgba(49, 112, 179, 0.76));
+  padding: 24px;
+  border-radius: 10px;
+  border-left: 5px solid var(--primary);
+  margin: 22px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 .card-link {
   display: block;
   color: inherit;
