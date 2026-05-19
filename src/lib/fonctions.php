@@ -16,5 +16,4 @@ function getCatalogue() : array {
     $catalogue = $requete->fetchAll() ;
     return $catalogue ;
 }
-
 ?>

@@ -1,6 +1,8 @@
 <?php
     $titrePage = "Catalogue — Sonoris";
     include __DIR__ .'/includes/header.php' ;
+    require_once __DIR__ . "/src/lib/fonctions.php" ;
+    $catalogue = getCatalogue() ;
 ?>
 
   <main class="container">
@@ -21,14 +23,15 @@
       <h1>Articles disponibles</h1>
 
       <br>
-
+      
+      <!--
       <nav class="category-nav" role="navigation" aria-label="Filtrer par catégorie">
         <a class="category-tab active" href="#product-list-all" aria-pressed="true">Tous</a>
         <a class="category-tab" href="#category-instruments">Instruments</a>
         <a class="category-tab" href="#category-sonorisation">Sonorisation</a>
         <a class="category-tab" href="#category-accessoires-instruments">Accessoires Instrument</a>
       </nav>
-
+      -->
       <br>
       
       <p class="filter-status sr-only" aria-live="polite">Affichage de tous les produits</p> 
@@ -36,165 +39,23 @@
       <section id="product-list-all" class="category-section">
         <h3 class="sr-only">Tous les produits</h3>
         <div class="product-grid" aria-live="polite">
-          <!-- Liste de tous les produits (sans filtre) -->
-          <!-- Instruments -->
-           <!-- Guitare éléctrique -->
-          <article id="product-guitare" class="product-card" data-category="instruments" aria-labelledby="guitare-title">
-            <figure class="product-media">
+          <?php if(!empty(getCatalogue())) : ?>
+              <?php  foreach($catalogue as $produit) :?>
+              <article id="product-<?= htmlspecialchars($produit['code_produit']) ?>" class="product-card" data-category="<?= htmlspecialchars($produit['category']) ?>" aria-labelledby="product-title-<?= htmlspecialchars($produit['code_produit']) ?>">
+                <figure class="product-media">
+                <img src="image/Catalogue/<?= htmlspecialchars($produit['image']) ?>" alt="<?= htmlspecialchars($produit['nom_produit']) ?> — image produit" width="360" height="200">
+                </figure>
 
-            <img src="image/Catalogue/guitare electrique standard.jpg " alt="Guitare électrique Standard — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="guitare-title">Guitare électrique Standard</h2>
-            <p>Corps en aulne, manche érable, son polyvalent pour scène et studio.</p>
-            <div class="price">€349,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Guitare -->
-          <article id="product-guitare-classique" class="product-card" data-category="instruments" aria-labelledby="guitare-classique-title">
-            <figure class="product-media">
-
-            <img src="image/Catalogue/Guitare classique 39 pouces.jpg" alt="Guitare classique 39 pouces — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="guitare-classique-title">Guitare classique 39 pouces</h2>
-            <p>Son chaud et cristallin, table en épicéa massif, idéale pour débutants et confirmés.</p>
-            <div class="price">€169,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Basse -->
-          <article id="product-basse" class="product-card" data-category="instruments" aria-labelledby="basse-title">
-          <figure class="product-media">
-
-            <img src="image/Catalogue/basse 4 cordes.jpg" alt="Basse 4 cordes — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="basse-title">Basse 4 cordes</h2>
-            <p>Idéale pour répétitions et concerts, électronique active.</p>
-            <div class="price">€289,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Batterie -->
-          <article id="product-batterie" class="product-card" data-category="instruments" aria-labelledby="batterie-title">
-            <figure class="product-media">
-
-            <img src="image/Catalogue/Batterie électronique 5 pièces.jpg" alt="Batterie électronique 5 pièces — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="batterie-title">Batterie électronique 5 pièces</h2>
-            <p>Pad sensible au toucher, sons authentiques, USB et MIDI intégrés.</p>
-            <div class="price">€379,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Clavier -->
-          <article id="product-clavier" class="product-card" data-category="instruments" aria-labelledby="clavier-title">
-          <figure class="product-media">
-
-            <img src="image/Catalogue/Clavier musical numérique 61 touches.jpg" alt="Clavier numérique 61 touches — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="clavier-title">Clavier numérique 61 touches</h2>
-            <p>Sonorités réalistes, sortie MIDI/USB, léger et portable.</p>
-            <div class="price">€219,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Sonorisation -->
-           <!-- Enceinte -->
-          <article id="product-sono" class="product-card" data-category="sonorisation" aria-labelledby="sono-title">
-            <figure class="product-media">
-
-            <img src="image/Catalogue/Enceinte sonorisation active 12_.jpg" alt="Enceinte active 12\ — image produit" width="360" height="200">
-
-          </figure>
-            <h2 id="sono-title">Enceinte active 12"</h2>
-            <p>Puissance pour petites scènes, DSP intégré.</p>
-            <div class="price">€429,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Ampli -->
-          <article id="product-ampli" class="product-card" data-category="sonorisation" aria-labelledby="ampli-title">
-            <figure class="product-media">
-
-            <img src="image/Catalogue/Amplificateur guitare 50W.jpg" alt="Amplificateur guitare 50W — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="ampli-title">Amplificateur guitare 50W</h2>
-            <p>Son clair et saturé, réglages avancés, parfait pour répétitions et petits concerts.</p>
-            <div class="price">€299,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Micro -->
-          <article id="product-micro" class="product-card" data-category="sonorisation" aria-labelledby="micro-title">
-            <figure class="product-media">
-
-            <img src="image/Catalogue/Micro cardioïde de studio.jpg" alt="Micro cardioïde de studio — image produit" width="360" height="200">
-
-          </figure>
-            <h2 id="micro-title">Micro cardioïde de studio</h2>
-            <p>Conçu pour voix et instruments, livré avec suspension.</p>
-            <div class="price">€129,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Casque -->
-          <article id="product-casque" class="product-card" data-category="sonorisation" aria-labelledby="casque-title">
-          <figure class="product-media">
-
-            <img src="image/Catalogue/Casque pour studio fermé.jpg" alt="Casque studio fermé — image produit" width="360" height="200">
- 
-          </figure>
-            <h2 id="casque-title">Casque studio fermé</h2>
-            <p>Confort longue durée, réponse neutre pour mix.</p>
-            <div class="price">€79,00</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Accessoires Instrument -->
-            <!-- Baguettes batterie -->
-          <article id="product-baguettes" class="product-card" data-category="accessoires-instruments" aria-labelledby="baguettes-title">
-            <figure class="product-media">
-
-            <img src="image/Catalogue/Baguettes pour batterie pro.jpg" alt="Baguettes batterie pro — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="baguettes-title">Baguettes batterie pro</h2>
-            <p>Paire de baguettes en hickory, embout nylon, légères et durables pour tous styles.</p>
-            <div class="price">€12,99</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Médiator -->
-          <article id="product-mediator" class="product-card" data-category="accessoires-instruments" aria-labelledby="mediator-title">
-            <figure class="product-media">
-
-            <img src="image/Catalogue/Médiator guitare pack.jpg" alt="Médiator guitare pack — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="mediator-title">Médiator guitare pack</h2>
-            <p>Paquet de 12 médiators, différentes épaisseurs, son brillant et précis.</p>
-            <div class="price">€8,99</div>
-            <div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
-
-          <!-- Corde guitare -->
-          <article id="product-cordes" class="product-card" data-category="accessoires-instruments" aria-labelledby="cordes-title">
-            <figure class="product-media">
-
-            <img src="image/Catalogue/Jeu de cordes guitare.jpg" alt="Jeu de cordes guitare premium — image produit" width="360" height="200">
-
-            </figure>
-            <h2 id="cordes-title">Jeu de cordes guitare premium</h2>
-            <p>Cordes en bronze phosphoreux, son brillant et durable, paquet de 3 jeux.</p>
-            <div class="price">€24,99</div>
-            <a href=""></a><div class="product-actions"><button class="btn">Voir / Acheter</button></div>
-          </article>
+                <h2 id="guitare-title"> <?= $produit['nom_produit'] ?></h2>
+                <p><?= $produit['description_produit'] ?></p>
+                <div class="price"><?= $produit['prix_TTC'] ?> € </div>
+                <div class="product-actions"><a href="details-produit.php?code_produit=<?= htmlspecialchars($produit['code_produit']) ?>" class="btn">Voir / Acheter</a></div>
+              </article>
+              <?php endforeach ; ?>
+          <?php else : ?>
+              <p>Aucun produit disponible pour le moment.</p>
+          <?php endif ; ?>
+          
 
         </div>
       </section>

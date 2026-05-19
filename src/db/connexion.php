@@ -17,4 +17,5 @@ function getConnexion() : PDO {
 
 }
 
+
 ?>
